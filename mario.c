@@ -3,11 +3,10 @@
 
 int main(void)
 {
-    int blockHeight=get_int("Set the height of the pyramid: \n");
+    int blockHeight=get_int("Height: ");
     while(blockHeight>8||blockHeight<1)
     {
-        printf("Invalid input: Height must be between 1 and 8 \n");
-        blockHeight=get_int("Set the height of the pyramid: \n");
+        blockHeight=get_int("Height: ");
     }
 
     for(int i=0;i<blockHeight;i++)
