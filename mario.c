@@ -5,7 +5,7 @@ int main(void)
 {
     int blockHeight=0;
     do{
-        blockHeight=get_int("Height: ");
+        blockHeight=get_int("\nHeight: ");
     }
     while(blockHeight>8||blockHeight<1);
 
