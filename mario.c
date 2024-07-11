@@ -3,11 +3,11 @@
 
 int main(void)
 {
-    int blockHeight=get_int("Height: ");
-    while(blockHeight>8||blockHeight<1)
-    {
+    int blockHeight=0;
+    do{
         blockHeight=get_int("Height: ");
     }
+    while(blockHeight>8||blockHeight<1);
 
     for(int i=0;i<blockHeight;i++)
     {
