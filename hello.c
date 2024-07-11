@@ -5,7 +5,7 @@ string askName(void);
 
 int main(void)
 {
-    printf("hello, %s \n", askName());
+    printf("hello, %s\n", askName());
 }
 
 string askName(void)
