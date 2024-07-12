@@ -23,7 +23,7 @@ bool valid(long code, int length)
             secondSum+=(code%((long)(pow(10,i))));
         }
     }
-    printf("R: %li",((firstSum*2)+secondSum)%10);
+
     if(((firstSum*2)+secondSum)%10==0){
         return true;
     }else
