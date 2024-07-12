@@ -16,14 +16,16 @@ bool valid(long code, int length)
     long firstSum=0;
     long secondSum=0;
 
-    for(int i=1;i<length;i++){
+    for(int i=1;i<length+1;i++){
         if((i%2)==0){
-            firstSum+=(code%((long)(pow(10,i))));
+            printf("fS:%li\n",((code%(long)(pow(10,i)))-(code%(long)(pow(10,i-1))))/(long)(pow(10,i-1)));
+            firstSum+=((code%(long)(pow(10,i)))-(code%(long)(pow(10,i-1))))/(long)(pow(10,i-1));
         }else{
-            secondSum+=(code%((long)(pow(10,i))));
+            printf("sS:%li\n",((code%(long)(pow(10,i)))-(code%(long)(pow(10,i-1))))/(long)(pow(10,i-1)));
+            secondSum+=((code%(long)(pow(10,i)))-(code%(long)(pow(10,i-1))))/(long)(pow(10,i-1));
         }
     }
-
+    printf("R: %li",((firstSum*2)+secondSum)%10);
     if(((firstSum*2)+secondSum)%10==0){
         return true;
     }else
