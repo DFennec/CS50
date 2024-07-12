@@ -11,6 +11,27 @@ int main(void)
     printf("\n%s",detectIssuer(number));
 }
 
+bool valid(long code, int length)
+{
+    long firstSum=0;
+    long secondSum=0;
+
+    for(int i=1;i<length;i++){
+        if((i%2)==0){
+            firstSum+=(code%((long)(pow(10,i))));
+        }else{
+            secondSum+=(code%((long)(pow(10,i))));
+        }
+    }
+
+    if(((firstSum*2)+secondSum)%10==0){
+        return true;
+    }else
+    {
+        return false;
+    }
+}
+
 string detectIssuer(long code)
 {
     int length=0;
@@ -20,6 +41,8 @@ string detectIssuer(long code)
     long start=((code%(long)(pow(10,length)))-(code%(long)(pow(10,length-2))))/(long)(pow(10,length-2));
     long startFirst=(start-(start%10))/10;
 
+    if(valid(code,length))
+    {
     if((length==15)&&(start==34||start==37))
     {
         return "AMEX\n";
@@ -31,4 +54,9 @@ string detectIssuer(long code)
     }else{
         return "INVALID\n";
     }
+    }else
+    {
+        return "INVALID\n";
+    }
+
 }
