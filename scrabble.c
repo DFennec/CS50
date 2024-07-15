@@ -27,7 +27,7 @@ for(int i=0, n=strlen(word1);i<n;i++){
 
 for(int i=0, n=strlen(word2);i<n;i++){
     letter=((int)toupper(word2[i]))-65;
-    if(letter<27){
+    if(letter<27&&letter>-1){
         p2score+=points[letter];
     }
 
