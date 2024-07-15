@@ -20,9 +20,9 @@ int main(void)
 
 double countLetters(string text)/*Average number of letters per 100 words*/
 {
-    int letters=0;
-    int totalLetters=0;
-    int words=0;
+    double letters=0.0;
+    double totalLetters=0.0;
+    double words=0.0;
     for (int i=0, n=strlen(text); i<n; i++)
     {
         if(((ispunct(text[i])!=0)||(isblank(text[i])!=0)||(isspace(text[i])!=0))&&letters!=0)
@@ -42,8 +42,8 @@ double countLetters(string text)/*Average number of letters per 100 words*/
 
 double countSentences(string text)/*Average sentences per 100 words*/
 {
-    int sentences=0;
-    int words=0;
+    double sentences=0.0;
+    double words=0.0;
     char prevChar='a';
     char currChar='a';
     for (int i=0, n=strlen(text); i<n; i++)
