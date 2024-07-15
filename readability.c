@@ -66,6 +66,6 @@ double gradeText(string text)
 {
     double L=countLetters(text);
     double S=countSentences(text);
-    double grade=0.0588 * L - 0.296 * S - 15.8;
+    double grade=((0.0588 * L) - (0.296 * S)) - 15.8;
     return round(grade);
 }
