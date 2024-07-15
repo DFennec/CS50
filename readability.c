@@ -44,18 +44,20 @@ double countSentences(string text)/*Average sentences per 100 words*/
 {
     int sentences=0;
     int words=0;
-    string currentChar="";
+    char prevChar='a';
+    char currChar='a';
     for (int i=0, n=strlen(text); i<n; i++)
     {
-        currentChar=&text[i];
-        if(((ispunct(text[i])!=0)||(isblank(text[i])!=0)||(isspace(text[i])!=0)))
+        currChar=text[i];
+        if(((ispunct(text[i])!=0)||(isblank(text[i])!=0)||(isspace(text[i])!=0))&&(isalpha(prevChar)!=0))
         {
             words++;
         }
-        if((ispunct(text[i])!=0)&&(strcmp(&text[i],",")==0))
+        if((ispunct(text[i])!=0)&&(currChar!=',')&&(currChar!='\''))
         {
             sentences++;
         }
+        prevChar=text[i];
     }
     return (sentences/words)*100;
 }
