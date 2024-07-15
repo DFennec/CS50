@@ -19,12 +19,18 @@ int letter=0;
 
 for(int i=0, n=strlen(word1);i<n;i++){
     letter=((int)toupper(word1[i]))-65;
+        if(letter<27){
     p1score+=points[letter];
+        }
+
 }
 
 for(int i=0, n=strlen(word2);i<n;i++){
     letter=((int)toupper(word2[i]))-65;
-    p2score+=points[letter];
+    if(letter<27){
+        p2score+=points[letter];
+    }
+
 }
 if(p1score>p2score)
 {
