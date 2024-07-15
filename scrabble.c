@@ -19,7 +19,7 @@ int letter=0;
 
 for(int i=0, n=strlen(word1);i<n;i++){
     letter=((int)toupper(word1[i]))-65;
-        if(letter<27){
+        if(letter<27&&letter>-1){
     p1score+=points[letter];
         }
 
