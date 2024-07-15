@@ -52,7 +52,7 @@ double countSentences(string text)/*Average sentences per 100 words*/
         {
             words++;
         }
-        if((ispunct(text[i])!=0))
+        if((ispunct(text[i])!=0)&&(strcmp(&text[i],",")==0))
         {
             sentences++;
         }
