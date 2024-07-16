@@ -56,14 +56,19 @@ string encrypt(string cypher,string message)
     for (int i = 0, n = strlen(message);i<n;i++)
     {
         currentMessageLetter=message[i];
-        cypherPosition=((int)toupper(currentMessageLetter))-65;
-
-        if(isupper(currentMessageLetter))
+        if(isalpha(currentMessageLetter)!=0){
+            cypherPosition=((int)toupper(currentMessageLetter))-65;
+            if(isupper(currentMessageLetter))
+            {
+                cyphertext[i]+=toupper(cypher[cypherPosition]);
+            }else
+            {
+                cyphertext[i]+=tolower(cypher[cypherPosition]);
+            }
+        }
+        else
         {
-            cyphertext[i]+=toupper(cypher[cypherPosition]);
-        }else
-        {
-            cyphertext[i]+=tolower(cypher[cypherPosition]);
+            cyphertext[i]+=currentMessageLetter;
         }
     }
     return cyphertext;
