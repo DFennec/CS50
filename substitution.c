@@ -43,7 +43,7 @@ int main(int argc, string argv[])
         }
     }
     string message=get_string("plaintext: ");
-    printf("ciphertext: \n%s",encrypt(key, message));
+    printf("ciphertext: %s\n",encrypt(key, message));
 }
 
 string encrypt(string cypher,string message)
