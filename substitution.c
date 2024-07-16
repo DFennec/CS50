@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 
 string encrypt(string cypher,string message);
@@ -48,7 +49,7 @@ int main(int argc, string argv[])
 
 string encrypt(string cypher,string message)
 {
-    char cyphertext[strlen(message)];
+    string cyphertext=malloc(strlen(message)+1);
     int cypherPosition=0;
     char currentMessageLetter='a';
 
@@ -59,12 +60,11 @@ string encrypt(string cypher,string message)
 
         if(isupper(currentMessageLetter))
         {
-            cyphertext[i]=toupper(cypher[cypherPosition]);
+            cyphertext[i]+=toupper(cypher[cypherPosition]);
         }else
         {
-            cyphertext[i]=tolower(cypher[cypherPosition]);
+            cyphertext[i]+=tolower(cypher[cypherPosition]);
         }
     }
-    string rebuiltcyphertext=cyphertext;
-    return rebuiltcyphertext;
+    return cyphertext;
 }
