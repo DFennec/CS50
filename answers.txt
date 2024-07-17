@@ -1,11 +1,11 @@
-sort1 uses: selection sort
+sort1 uses: selection sort.
 
 How do you know?: When used in a sorted list this one is the quickest since it skips the correct placement process. This type of sort's weakpoint comes to show when all values are in reverse order, what makes it as slow as the bubble sort because it has to replace an compare every value in the list, as with buble sort.
 
-sort2 uses: merge sort
+sort2 uses: merge sort.
 
 How do you know?: The execution time it it takes to end compared to the other two is way shorter in almost every sccenario/document, a feature that highlights its theta(n log n).
 
-sort3 uses: bubble sort
+sort3 uses: bubble sort.
 
 How do you know?: It is the slowest overall, in sorted list it takes the longest because it has to check every number with each other anyway.
