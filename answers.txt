@@ -1,6 +1,6 @@
 sort1 uses: bubble sort.
 
-How do you know?: When used in a sorted list this one is the quicker since it skips the correct placement process.
+How do you know?: When used in a sorted list this one is the quicker one since it skips the correct placement process when correctly sorted. Because in its worse scenarios it has performed as badly as selection sort O(n^2) and at its best Omega(n) lies in the middle between the fastest sort and the slowest sort.
 
 sort2 uses: merge sort.
 
@@ -8,4 +8,4 @@ How do you know?: The execution time it it takes to end compared to the other tw
 
 sort3 uses: selection sort.
 
-How do you know?: It is the slowest overall, in sorted list it takes the longest because it has to check every number with each other anyway.
+How do you know?: It is the slowest overall, in a sorted list it takes the longest because it has to check every number in the list anyway for every number in that list. This gives away its theta(n^2).
