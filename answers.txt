@@ -1,6 +1,6 @@
 sort1 uses: bubble sort.
 
-How do you know?: When used in a sorted list this one is the quickest since it skips the correct placement process. This type of sort's weakpoint comes to show when all values are in reverse order, what makes it as slow as the bubble sort because it has to replace an compare every value in the list, as with buble sort.
+How do you know?: When used in a sorted list this one is the quicker since it skips the correct placement process.
 
 sort2 uses: merge sort.
 
