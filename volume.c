@@ -35,14 +35,14 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
     uint8_t header[HEADER_SIZE];
-    fread(header,HEADER_SIZE,1,input);
-    fwrite(header,HEADER_SIZE,1,output);
+    fread(header, HEADER_SIZE, 1, input);
+    fwrite(header, HEADER_SIZE, 1, output);
     // TODO: Read samples from input file and write updated data to output file
     int16_t sample;
-    while(fread(&sample,sizeof(int16_t),1,input))
+    while (fread(&sample, sizeof(int16_t), 1, input))
     {
-        sample*=factor;
-        fwrite(&sample,sizeof(int16_t),1,output);
+        sample *= factor;
+        fwrite(&sample, sizeof(int16_t), 1, output);
     }
     // Close files
     fclose(input);
