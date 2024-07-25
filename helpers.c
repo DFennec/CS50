@@ -227,7 +227,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtRed = (int) sqrt(gR);
             image[i][j].rgbtBlue = (int) sqrt(gB);
             image[i][j].rgbtGreen = (int) sqrt(gG);
-            printf("%i,%i,%i\n", image[i][j].rgbtRed, image[i][j].rgbtBlue, image[i][j].rgbtGreen);
             if (image[i][j].rgbtRed > 255)
             {
                 image[i][j].rgbtRed = 255;
