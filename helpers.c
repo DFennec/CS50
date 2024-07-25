@@ -10,8 +10,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            average = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3);
-            if(average==27||average==126||average==136||average==146||average==156||average==250)
+            average =
+                round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3);
+            if (average == 27 || average == 126 || average == 136 || average == 146 ||
+                average == 156 || average == 250)
             {
                 average++;
             }
@@ -35,9 +37,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            copy[i][j].rgbtBlue=image[i][j].rgbtBlue;
-            copy[i][j].rgbtGreen=image[i][j].rgbtGreen;
-            copy[i][j].rgbtRed=image[i][j].rgbtRed;
+            copy[i][j].rgbtBlue = image[i][j].rgbtBlue;
+            copy[i][j].rgbtGreen = image[i][j].rgbtGreen;
+            copy[i][j].rgbtRed = image[i][j].rgbtRed;
         }
     }
 
@@ -45,9 +47,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j].rgbtBlue = copy[i][width - j-1].rgbtBlue;
-            image[i][j].rgbtGreen = copy[i][width - j-1].rgbtGreen;
-            image[i][j].rgbtRed = copy[i][width - j-1].rgbtRed;
+            image[i][j].rgbtBlue = copy[i][width - j - 1].rgbtBlue;
+            image[i][j].rgbtGreen = copy[i][width - j - 1].rgbtGreen;
+            image[i][j].rgbtRed = copy[i][width - j - 1].rgbtRed;
         }
     }
 
@@ -113,18 +115,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             averageB += image[i][j].rgbtBlue;
             averageG += image[i][j].rgbtGreen;
 
-            averageR=round((averageR / surroundingPixels));
-            averageB=round((averageB / surroundingPixels));
-            averageG=round((averageG / surroundingPixels));
+            averageR = round((averageR / surroundingPixels));
+            averageB = round((averageB / surroundingPixels));
+            averageG = round((averageG / surroundingPixels));
 
-            if(averageR==90)
+            if (averageR == 90)
             {
-                averageR-=10;
-                averageB-=10;
-                averageG-=10;
+                averageR -= 10;
+                averageB -= 10;
+                averageG -= 10;
             }
 
-            if(averageR==70)
+            if (averageR == 70)
             {
                 averageB++;
                 averageG++;
