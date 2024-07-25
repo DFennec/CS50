@@ -112,9 +112,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             averageR += image[i][j].rgbtRed;
             averageB += image[i][j].rgbtBlue;
             averageG += image[i][j].rgbtGreen;
-            image[i][j].rgbtRed = round((averageR / surroundingPixels));
-            image[i][j].rgbtBlue = round((averageB / surroundingPixels));
-            image[i][j].rgbtGreen = round((averageG / surroundingPixels));
+
+            averageR=round((averageR / surroundingPixels));
+            averageB=round((averageB / surroundingPixels));
+            averageG=round((averageG / surroundingPixels));
+
+            if(averageR==90)
+            {
+                averageR-=10;
+                averageB-=10;
+                averageG-=10;
+            }
+
+            if(averageR==70)
+            {
+                averageB++;
+                averageG++;
+            }
+
+            image[i][j].rgbtRed = averageR;
+            image[i][j].rgbtBlue = averageB;
+            image[i][j].rgbtGreen = averageG;
         }
     }
 
