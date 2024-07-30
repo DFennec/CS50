@@ -44,9 +44,9 @@ int main(int argc, char *argv[])
         }
     }
     fclose(card);
-    if (img != NULL) {
+
     fclose(img);
-    }
+
 
 }
 
