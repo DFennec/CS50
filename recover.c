@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
     BYTE block[BLOCKSIZE];
     while(fread(block, 1, BLOCKSIZE,card)==512)
     {
-        printf("%d, %d, %d, %d\n", block[0], block[1], block[2],block[3]);
     //detect slack space when more than a byte is filled with zeroes.
         if(checkSignature(block)==0)
         {
