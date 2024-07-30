@@ -11,7 +11,7 @@ int checkSignature(BYTE block[BLOCKSIZE]);
 int main(int argc, char *argv[])
 {
     int serial=0;
-    char stringifiedSerial[14];
+    char stringifiedSerial[16];
 
     if (argc != 2)
     {
@@ -23,17 +23,9 @@ int main(int argc, char *argv[])
     FILE *card= fopen(argv[1], "r");
     FILE *img;
     BYTE block[BLOCKSIZE];
-
     while(fread(block, 1, BLOCKSIZE,card)==512)
     {
-     if (card == NULL) {
-        return 1;
-      }
 
-
-    if (img == NULL) {
-         return 1;
-      }
         if(checkSignature(block)==0)
         {
 
