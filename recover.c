@@ -39,8 +39,9 @@ int main(int argc, char *argv[])
              serial++;
 
         }
-        fwrite(block, 1, BLOCKSIZE, img);
-
+        if (img != NULL) {
+            fwrite(block, 1, BLOCKSIZE, img);
+        }
     }
     fclose(card);
     if (img != NULL) {
