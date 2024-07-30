@@ -23,9 +23,17 @@ int main(int argc, char *argv[])
     FILE *card= fopen(argv[1], "r");
     FILE *img;
     BYTE block[BLOCKSIZE];
+
     while(fread(block, 1, BLOCKSIZE,card)==512)
     {
+     if (card == NULL) {
+        return 1;
+      }
 
+
+    if (img == NULL) {
+         return 1;
+      }
         if(checkSignature(block)==0)
         {
 
