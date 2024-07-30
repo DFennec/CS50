@@ -35,8 +35,8 @@ int main(int argc, char *argv[])
             }
 
              sprintf(stringifiedSerial, "%03i.jpg", serial);
-        img=fopen(stringifiedSerial, "w");
-        serial++;
+             img=fopen(stringifiedSerial, "w");
+             serial++;
 
         }
         fwrite(block, 1, BLOCKSIZE, img);
@@ -44,7 +44,9 @@ int main(int argc, char *argv[])
     }
 
     fclose(card);
+    if (img != NULL) {
     fclose(img);
+    }
 
 }
 
