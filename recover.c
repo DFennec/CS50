@@ -43,9 +43,8 @@ int main(int argc, char *argv[])
             fwrite(block, 1, BLOCKSIZE, img);
         }
     }
-    fclose(card);
-
     fclose(img);
+    fclose(card);
 
 
 }
