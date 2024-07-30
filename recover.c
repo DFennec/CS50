@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -10,7 +10,7 @@ int checkSignature(BYTE block[BLOCKSIZE]);
 
 int main(int argc, char *argv[])
 {
-    int serial=0;
+    int serial = 0;
     char stringifiedSerial[16];
 
     if (argc != 2)
@@ -20,37 +20,36 @@ int main(int argc, char *argv[])
     }
 
     BYTE b;
-    FILE *card= fopen(argv[1], "r");
+    FILE *card = fopen(argv[1], "r");
     FILE *img;
     BYTE block[BLOCKSIZE];
-    while(fread(block, 1, BLOCKSIZE,card)==512)
+    while (fread(block, 1, BLOCKSIZE, card) == 512)
     {
 
-        if(checkSignature(block)==0)
+        if (checkSignature(block) == 0)
         {
 
-            if(serial>0)
+            if (serial > 0)
             {
                 fclose(img);
             }
 
-             sprintf(stringifiedSerial, "%03i.jpg", serial);
-             img=fopen(stringifiedSerial, "w");
-             serial++;
-
+            sprintf(stringifiedSerial, "%03i.jpg", serial);
+            img = fopen(stringifiedSerial, "w");
+            serial++;
         }
+        if (img != NULL)
+        {
             fwrite(block, 1, BLOCKSIZE, img);
-
+        }
     }
     fclose(img);
     fclose(card);
-
-
 }
 
 int checkSignature(BYTE block[BLOCKSIZE])
 {
-    if(block[0]==block[2]&&block[1]==0xd8&&((block[3] & 0xf0) == 0xe0))
+    if (block[0] == block[2] && block[1] == 0xd8 && ((block[3] & 0xf0) == 0xe0))
     {
         return 0;
     }
