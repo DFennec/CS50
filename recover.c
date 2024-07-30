@@ -11,7 +11,7 @@ int checkSignature(BYTE block[BLOCKSIZE]);
 int main(int argc, char *argv[])
 {
     int serial=0;
-    char stringifiedSerial[8];
+    char stringifiedSerial[10];
 
     if (argc != 2)
     {
