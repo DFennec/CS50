@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
         if(checkSignature(block)==0)
         {
 
-            if(serial>1)//CHECK IF THERE IS A DESTINATION FILE ALREADY OPEN AND CLOSE IT BEFORE OPENING A NEW ONE
+            if(serial>0)//CHECK IF THERE IS A DESTINATION FILE ALREADY OPEN AND CLOSE IT BEFORE OPENING A NEW ONE
             {
                 fclose(img);
             }
