@@ -25,24 +25,16 @@ int main(int argc, char *argv[])
     BYTE block[BLOCKSIZE];
     while(fread(block, 1, BLOCKSIZE,card)==512)
     {
-    //detect slack space when more than a byte is filled with zeroes.
+
         if(checkSignature(block)==0)
         {
 
-            if(serial>0)//CHECK IF THERE IS A DESTINATION FILE ALREADY OPEN AND CLOSE IT BEFORE OPENING A NEW ONE
+            if(serial>0)
             {
                 fclose(img);
             }
 
-
-
-            if(serial<10)
-            {
-                sprintf(stringifiedSerial, "00%d.jpg", serial);
-            }else
-            {
-                sprintf(stringifiedSerial, "0%d.jpg", serial);
-            }
+             sprintf(stringifiedSerial, "%03i.jpg", serial);
         img=fopen(stringifiedSerial, "w");
         serial++;
 
