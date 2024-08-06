@@ -40,7 +40,7 @@ person *create_family(int generations)
 {
     // TODO: Allocate memory for new person
     int rAllele = rand() % 2;
-    person *newP=malloc(sizeof(person));
+    person *newP = malloc(sizeof(person));
     // If there are still generations left to create
     if (generations > 1)
     {
@@ -49,27 +49,26 @@ person *create_family(int generations)
         person *parent1 = create_family(generations - 1);
 
         // TODO: Set parent pointers for current person
-        newP->parents[0]=parent0;
-        newP->parents[1]=parent1;
+        newP->parents[0] = parent0;
+        newP->parents[1] = parent1;
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
 
-        newP->alleles[0]=parent0->alleles[rAllele];
+        newP->alleles[0] = parent0->alleles[rAllele];
 
-        rAllele=rand()%2;
+        rAllele = rand() % 2;
 
-        newP->alleles[1]=parent1->alleles[rAllele];
-
+        newP->alleles[1] = parent1->alleles[rAllele];
     }
 
     // If there are no generations left to create
     else
     {
         // TODO: Set parent pointers to NULL
-        newP->parents[0]=NULL;
-        newP->parents[1]=NULL;
+        newP->parents[0] = NULL;
+        newP->parents[1] = NULL;
         // TODO: Randomly assign alleles
-        newP->alleles[0]=random_allele();
-        newP->alleles[1]=random_allele();
+        newP->alleles[0] = random_allele();
+        newP->alleles[1] = random_allele();
     }
 
     // TODO: Return newly created person
@@ -83,7 +82,7 @@ void free_family(person *p)
     // TODO: Handle base case
 
     // TODO: Free parents recursively
-    if(p->parents[0]!=NULL)
+    if (p->parents[0] != NULL)
     {
         free_family(p->parents[0]);
         free_family(p->parents[1]);
@@ -110,11 +109,13 @@ void print_family(person *p, int generation)
     // Print person
     if (generation == 0)
     {
-        printf("Child (Generation %i): blood type %c%c\n", generation, p->alleles[0], p->alleles[1]);
+        printf("Child (Generation %i): blood type %c%c\n", generation, p->alleles[0],
+               p->alleles[1]);
     }
     else if (generation == 1)
     {
-        printf("Parent (Generation %i): blood type %c%c\n", generation, p->alleles[0], p->alleles[1]);
+        printf("Parent (Generation %i): blood type %c%c\n", generation, p->alleles[0],
+               p->alleles[1]);
     }
     else
     {
@@ -122,7 +123,8 @@ void print_family(person *p, int generation)
         {
             printf("Great-");
         }
-        printf("Grandparent (Generation %i): blood type %c%c\n", generation, p->alleles[0], p->alleles[1]);
+        printf("Grandparent (Generation %i): blood type %c%c\n", generation, p->alleles[0],
+               p->alleles[1]);
     }
 
     // Print parents of current generation
