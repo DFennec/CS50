@@ -20,10 +20,9 @@ elif number[0] == "4" and (len(number) == 13 or len(number) == 16):
             else:
                 checksum += int(number[counter])*2
         else:
-            print(counter, "-", number[counter])
             checksum += int(number[counter])
         counter += 1
-    print(checksum)
+
     if checksum % 10 == 0:
         print("VISA")
     else:
