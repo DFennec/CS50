@@ -11,18 +11,21 @@ elif number[0] == "4" and (len(number) == 13 or len(number) == 16):
     while counter < len(number):
 
         if counter % 2 == 0:
+
             if len(number) == 13 and counter == 12:
                 checksum += int(number[counter])
+
                 break
             if int(number[counter])*2 > 9:
                 caster = str(int(number[counter])*2)
                 checksum += int(caster[0])+int(caster[1])
             else:
+
                 checksum += int(number[counter])*2
         else:
+
             checksum += int(number[counter])
         counter += 1
-
     if checksum % 10 == 0:
         print("VISA")
     else:
