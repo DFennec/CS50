@@ -1,11 +1,11 @@
-n=0
+n = 0
 
-while n<1 or n>8:
+while n < 1 or n > 8:
     try:
-        n=int(input("Height: "))
+        n = int(input("Height: "))
     except:
-        n=int(input("Height: "))
-    if n>0 and n<9:
+        n = int(input("Height: "))
+    if n > 0 and n < 9:
         for i in range(n):
             for j in range(n-1-i):
                 print(" ", end="")
