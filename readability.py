@@ -13,13 +13,10 @@ for characters in text:
     if characters=="." or characters=="!" or characters=="?":
         sentences+=1
 
-print("L:",letters,"w:",words,"S:",sentences)
 L=(letters/words)*100
 S=(sentences/words)*100
 
 index = round((0.0588 * L) - (0.296 * S) - 15.8)
-
-print("idx:",index)
 
 if index<2:
     print("Before Grade 1")
